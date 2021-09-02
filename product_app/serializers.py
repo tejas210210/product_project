@@ -5,8 +5,7 @@ from .models import *
 class TokenModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Token
-        fields = ['user_id', 'user_token']
-        read_only_fields = ['user_token']
+        fields = ['user_id']
 
 
 class ProductSerializer(serializers.ModelSerializer):

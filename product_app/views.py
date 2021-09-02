@@ -48,11 +48,13 @@ class LogInModelViewSet(views.APIView):
             if token:
                 return Token.objects.get(user_token=user)
             else:
-                tk = ''.join( random.choice( string.ascii_uppercase + string.digits ) for x in range( 32 ) )
-                t = Token(user_id = user, user_token = tk)
+                t = Token(user_id = user, user_token = token_generate())
                 t.save()
         else:
             return "user not authenticated...!!"
+
+def token_generate():
+    return ''.join( random.choice( string.ascii_uppercase + string.digits ) for x in range( 32 ) )
 
 
 class UserCreateModelViewSet(CreateAPIView):

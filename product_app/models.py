@@ -21,7 +21,7 @@ class Product(models.Model):
 class Token(models.Model):
     """The UserModel is define"""
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_token = models.CharField(max_length=200, null=True)
+    user_token = models.CharField(max_length=200, null=True, unique=True)
 
     class Meta:
         db_table = "Token_Info"
