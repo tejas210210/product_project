@@ -129,17 +129,3 @@ GROUP_PERMISSIONS = {
 # set this if you want to use smartmin's user login
 LOGIN_URL = '/users/login'
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-}
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'product_project.product_app.authentication.MyOwnTokenAuthentication',
-#     ),
-# }
